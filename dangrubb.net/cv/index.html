@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Dan Grubb CV</title>
+  </head>
+  <body>
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+      <nav class="nav bd-container">
+        <a href="#" class="nav nav__logo">Dan</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active-link">
+                <i class="bx bx-home nav__icon"></i>Home
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#profile" class="nav__link">
+                <i class="bx bx-user nav__icon"></i>Profile
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#education" class="nav__link">
+                <i class="bx bx-book nav__icon"></i>Education
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">
+                <i class="bx bx-receipt nav__icon"></i>Skills
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#experiencie" class="nav__link">
+                <i class="bx bx-briefcase nav__icon"></i>Experience
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#certificates" class="nav__link">
+                <i class="bx bx-briefcase nav__icon"></i>Certificates
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#references" class="nav__link">
+                <i class="bx bx-link-external nav__icon"></i>References
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="bx bx-grid-alt nav__icon"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main class="l-main bd-container">
+      <!-- All elements within this div, is generated in PDF -->
+      <div class="resume" id="area-cv">
+        <div class="resume__left">
+          <!--========== HOME ==========-->
+          <section class="home" id="home">
+            <div class="home__container section bd-grid">
+              <div class="home__data bd-grid">
+                <img
+                  src="assets/img/perfil-example.jpg"
+                  alt="perfil"
+                  class="home__img"
+                />
+                <h1 class="home__title">Dan <b>Grubb</b></h1>
+                <h3 class="home__profession">IT Man</h3>
+
+                <div>
+                  <a
+                    download=""
+                    href="assets/pdf/DanGrubbResume.pdf"
+                    class="home__button-movil"
+                    >Download</a
+                  >
+                </div> 
+              </div>
+              <div class="home__address bd-grid">
+                <span class="home__information">
+                  <i class="bx bx-map home__icon"></i>Falls Church, VA
+                </span>
+                <span class="home__information">
+                    <i class="bx bx-envelope home__icon"></i> Dan@DanGrubb.Net               
+              </span>
+                <span class="home__information">
+                  <i class="bx bx-phone home__icon"></i> 703-649-1637
+                </span>
+              </span>
+              <span class="home__information">
+                <i class="bx bx-planet home__icon"></i> dangrubb.net
+              </span>
+              </div>
+            </div>
+            <!-- Theme change button -->
+            <i
+              class="bx bx-moon change-theme"
+              title="Theme"
+              id="theme-button"
+            ></i>
+            <!-- Button to generate and download the pdf. Available for desktop. -->
+            <i
+              class="bx bx-download generate-pdf"
+              title="Generate PDF"
+              id="resume-button"
+            ></i>
+          </section>
+
+         
+
+          <!--========== PROFILE ==========-->
+          <section class="profile section" id="profile">
+            <h2 class="section-title">Profile</h2>
+            <p class="profile__description">
+              Dynamic and detail-oriented IT professional with a proven track record in both independent and collaborative environments. Skilled in prioritizing tasks and adept at diagnosing and resolving complex technical issues to ensure optimal performance and customer satisfaction.
+            </p>
+          </section>
+
+          <!--========== EDUCATION ==========-->
+          <section class="education section" id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="education__container">
+              <div class="education__content">
+                <div class="education__time">
+                  <span class="education__rounder"></span>
+                  <span class="education__line"></span>
+                </div>
+                <div class="education__data bd-grid">
+                  <h3 class="education__title">Advanced Diploma</h3>
+                  <span class="education__studies">Patriot High School</span>
+                  <span class="education__year">2015 - 2019</span>
+                </div>
+              </div>
+
+              <div class="education__content">
+                <div class="education__time">
+                  <span class="education__rounder"></span>
+                  <span class="education__line"></span>
+                </div>
+                <div class="education__data bd-grid">
+                  <h3 class="education__title">Some College</h3>
+                  <!-- <span class="education__studies"></span> -->
+                  <span class="education__year">2020</span>
+                </div>
+              </div>
+
+              <div class="education__content">
+                <div class="education__time">
+                  <span class="education__rounder"></span>
+                  <!-- <span class="education__line"></span> -->
+                </div>
+                <div class="education__data bd-grid">
+                  <h3 class="education__title">Self-Study Certifications</h3>
+                  <!-- <span class="education__studies"></span> -->
+                  <span class="education__year">2020 - Present</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!--========== SKILLS  ==========-->
+          <section class="skills section" id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills__content bd-grid">
+              <ul class="skills__data">
+                <li class="skills__name">
+                  <span class="skills__circle"></span>Windows
+                </li>
+                <li class="skills__name">
+                  <span class="skills__circle"></span>Mac
+                </li>
+                <li class="skills__name">
+                  <span class="skills__circle"></span>Linux
+                </li>
+                <li class="skills__name">
+                  <span class="skills__circle"></span>Networking
+                </li>
+              </ul>
+              <ul class="skills__data">
+                <li class="skills__name">
+                  <span class="skills__circle"></span>Security
+                </li>
+                <li class="skills__name">
+                  <span class="skills__circle"></span>Hardware
+                </li>
+                <li class="skills__name">
+                  <span class="skills__circle"></span>Software
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <div class="resume__right">
+          <!--========== EXPERIENCE ==========-->
+          <section class="experience section" id="experience">
+            <h2 class="section-title">Experience</h2>
+
+            <div class="experience__container bd-grid">
+              <div class="experience__content">
+                <div class="experience__time">
+                  <span class="experience__rounder"></span>
+                  <span class="experience__line"></span>
+                </div>
+                <div class="experience__data bd-grid">
+                  <h3 class="experience__title">Technical Account Manager</h3>
+                  <span class="experience__company"
+                    >2023 to Present | ITG</span
+                  >
+                  <p class="experience__description">
+                    <ul class="experience__description">
+                      <li>• Ensure customer success with technical consulting and implementation of adaptive software and hardware.</li>
+                      <li>• Manage client relationships and troubleshoot technical issues.</li>
+                      <li>• Deliver tailored solutions for business needs.</li>
+                      <li>• Find creative solutions for government and private clients.</li>
+                      <li>• Maintained 99% SLA compliance.</li>
+                      <li>• Streamlined and documented standard operating procedures.</li>
+                      <li>• Automated daily and repetitive tasks.</li>
+                      <li>• Created instructional media for field technicians.</li>
+                  </ul>       
+                 </p>
+                </div>
+              </div>
+              <div class="experience__content">
+                <div class="experience__time">
+                  <span class="experience__rounder"></span>
+                  <span class="experience__line"></span>
+                </div>
+                <div class="experience__data bd-grid">
+                  <h3 class="experience__title">Field Technician</h3>
+                  <span class="experience__company"
+                    >2023 | Dell</span
+                  >
+                  <p class="experience__description">
+                    <ul class="experience__description">
+                      <li>• Managed a workload of repairs in a ticketing system.</li>
+                      <li>• Scheduled, routed, and completed all tickets in a timely manner.</li>
+                      <li>• Found solutions to complex hardware/firmware issues and ensured systems were up and running efficiently.</li>
+                      <li>• Maintained positive professional relations with Dell’s corporate, government, and consumer clients.</li>
+                      <li>• Exceeded ticket completion standards handling all tickets in the Falls Church - Arlington area.</li>
+                  </ul>    
+                  </p>
+                </div>
+              </div>
+              <div class="experience__content">
+                <div class="experience__time">
+                  <span class="experience__rounder"></span>
+                  <!-- <span class="experience__line"></span> -->
+                </div>
+                <div class="experience__data bd-grid">
+                  <h3 class="experience__title">
+                    Lead Repair Technician
+                  </h3>
+                  <span class="experience__company"
+                    >2021 to 2022 | T-Mobile</span
+                  >
+                  <p class="experience__description">
+                    <ul class="experience__description">
+                      <li>• Diagnosed and repaired cellphones, tablets, laptops, and other mobile devices.</li>
+                      <li>• Efficiently diagnosed issues with customers' devices and performed all necessary repairs.</li>
+                      <li>• Handled inventory and parts returns while ensuring systems were up to date.</li>
+                      <li>• Exceeded SLA expectations completing 90% of repairs in under 90 minutes.</li>
+                  </ul>     
+                  </p>
+                </div>
+              </div>
+              <a href="moreInformation.html" class="more__information">
+                <i class="bx bx-info-circle information__icon"></i>
+                More Information
+              </a>
+            </div>
+          </section>
+
+          <!--========== CERTIFICATES ==========-->
+          <section class="certificate section" id="certificates">
+            <h2 class="section-title">Certificates</h2>
+
+            <div class="certificate__container bd-grid">
+              <div class="certificate__content">
+                <h3 class="certificate__title">
+                  CompTIA A+, Network+ and Security+
+                </h3>
+                <p class="certificate__description">
+                  https://www.credly.com/users/dangrubbb
+                </p>
+              </div>
+              <div class="certificate__content">
+                <h3 class="certificate__title">
+                  Microsoft Office Specialist
+                </h3>
+                <p class="certificate__description">
+                  https://www.credly.com/users/dangrubbb
+                </p>
+              </div>
+              <div class="certificate__content">
+                <h3 class="certificate__title">
+                  Dell, Apple, Samsung Certified Repair Technician
+                </h3>
+                <p class="certificate__description">
+                  
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!--========== REFERENCES ==========-->
+          <section class="references section" id="references">
+            <h2 class="section-title">References</h2>
+
+            <div class="references__container bd-grid">
+              <div class="references__content bd-grid">
+                <span class="references__subtitle">IT Mananger, ITG</span>
+                <h3 class="references__title">Samuel Albert</h3>
+                <ul class="references__contact">
+                  <li>Details available upon request</li>
+                  <!-- <li>Email: user@email.com</li> -->
+                </ul>
+              </div>
+              <div class="references__content bd-grid">
+                <span class="references__subtitle">Server Technician, AMD</span>
+                <h3 class="references__title">Brian Oberoi</h3>
+                <ul class="references__contact">
+                  <li>Details available upon request</li>
+                  <!-- <li>Email: user@email.com</li> -->
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!--========== LANGUAGES ==========-->
+          <section class="languages section">
+            <h2 class="section-title">Languages</h2>
+
+            <div class="languages__container">
+              <ul class="languages__content bd-grid">
+                <li class="languages__name">
+                  <span class="languages__circle"></span> English
+                </li>
+                <li class="languages__name">
+                  <span class="languages__circle"></span> Python
+                </li>
+                <li class="languages__name">
+                  <span class="languages__circle"></span> HTML
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!--========== INTERESTS ==========-->
+          <section class="interests section">
+            <h2 class="section-title">Interests</h2>
+
+            <div class="interests__container bd-grid">
+              <div class="interests__content">
+                <i class="bx bx-headphone interests__icon"></i>
+                <span class="interests__name">Music</span>
+              </div>
+              <div class="interests__content">
+                <i class="bx bx-cog interests__icon"></i>
+                <span class="interests__name">Tech</span>
+              </div>
+              <div class="interests__content">
+                <i class="bx bx-walk interests__icon"></i>
+                <span class="interests__name">Fitness</span>
+              </div>
+
+              <div class="interests__content">
+                <i class="bx bx-bible interests__icon"></i>
+                <span class="interests__name">Christ</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!--========== SCROLL TOP ==========-->
+    <a href="#" class="scrolltop" id="scroll-top">
+      <i class="bx bx-up-arrow-alt scrolltop__icon"></i>
+    </a>
+    <!--========== HTML2PDF ==========-->
+    <script src="js/html2pdf.bundle.min.js"></script>
+
+    <!--========== MAIN JS ==========-->
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/src/img/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dangrubb.net</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .alert {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            background: rgba(255, 255, 0, 0.9); /* Yellow with 90% opacity */
+            color: black;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            text-align: center;
+        }
+        .alert .close-btn {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .quadrant {
+            width: 50%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-decoration: none;
+            position: relative;
+        }
+        .q1 { background: black; color: white; }
+        .q2 { background: #123425; color: white; }
+        .q3 { background: white; color: #123425; }
+        .q4 {
+            background: #f4f4f4;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="alert">
+        <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <p id="verse-content">Loading verse of the day...</p>
+    </div>
+    <div class="container" id="root"></div>
+    <script>
+        // Fetch the verse of the day from the ATOM feed using the Cloudflare Worker
+        async function fetchVerse() {
+            try {
+                const workerUrl = 'https://bible.dangrubb.workers.dev/'; // Cloudflare Worker URL
+                const response = await fetch(workerUrl);
+                const text = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(text, 'text/xml');
+                const content = xmlDoc.querySelector('content').textContent;
+
+                // Remove unnecessary quotes around the verse
+                const verseText = content.replace(/^&ldquo;|&rdquo;$/g, '').trim();
+                if (verseText) {
+                    document.getElementById('verse-content').innerHTML = verseText;
+                    // Hide the alert after 15 seconds
+                    setTimeout(() => {
+                        document.querySelector('.alert').style.display = 'none';
+                    }, 15000); // 15 seconds
+                } else {
+                    // Hide the alert if no verse is found
+                    document.querySelector('.alert').style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Error fetching verse:', error);
+                // Hide the alert if there's an error
+                document.querySelector('.alert').style.display = 'none';
+            }
+        }
+
+        // Initialize the verse fetch and quadrants
+        fetchVerse();
+        function createQuadrants(parent, depth, fontSize) {
+            if (depth > 5) return; // Limit recursion depth to avoid excessive rendering
+            const colors = [
+                { bg: 'black', color: 'white', text: 'Utilities', link: 'https://pi.dangrubb.net' },
+                { bg: '#123425', color: 'white', text: 'Blog', link: 'https://ghost.dangrubb.net' },
+                { bg: 'white', color: '#123425', text: 'CV', link: 'https://dangrubb.net/cv' },
+                { bg: '#f4f4f4', color: 'black', text: '', link: '' }
+            ];
+            for (let i = 0; i < 4; i++) {
+                let div = document.createElement(i < 3 ? 'a' : 'div');
+                div.className = 'quadrant';
+                div.style.background = colors[i].bg;
+                div.style.color = colors[i].color;
+                div.style.fontSize = `${fontSize}px`;
+                if (colors[i].text) div.innerText = colors[i].text;
+                if (colors[i].link) div.href = colors[i].link;
+                parent.appendChild(div);
+                if (i === 3) {
+                    div.classList.add('q4');
+                    createQuadrants(div, depth + 1, fontSize / 2);
+                }
+            }
+        }
+        createQuadrants(document.getElementById('root'), 0, 32); // Start with font size 32px
+    </script>
+</body>
+</html>
